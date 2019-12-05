@@ -4,7 +4,6 @@ document.getElementById('zip').addEventListener('blur', validateZip);
 document.getElementById('email').addEventListener('blur', validateEmail);
 document.getElementById('phone').addEventListener('blur', validatePhone);
 
-
 function validateName(e) {
   const name = e.target;
   const re = /^[a-zA-Z]{2,10}$/;
@@ -40,7 +39,7 @@ function validateEmail(e) {
 
 function validatePhone(e) {
   const phone = e.target;
-  const re = /^\+?\d{1}?[-. ]?\(?\d{3}\)?[-. ]?\d{3}[-. ]?\d{2}[-. ]?\d{2}$/;
+  const re = /^(\+?\d{1}?[-. ]?)?\(?\d{3}\)?[-. ]?\d{3}[-. ]?\d{2}[-. ]?\d{2}$/;
 
   if (!re.test(phone.value)) {
     phone.classList.add('is-invalid');
